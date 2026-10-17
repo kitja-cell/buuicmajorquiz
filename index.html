@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ค้นหาสาขาที่ใช่ | Find Your Program – International College, Burapha University</title>
 <style>
-:root{--bg:#f5f6f8;--card:#fff;--ink:#1b2a41;--mute:#5d6b80;--line:#d9dee6;--accent:#0f6e73;--accent-ink:#fff}
-@media (prefers-color-scheme:dark){:root{--bg:#10171f;--card:#18222d;--ink:#eaeef3;--mute:#9fb0c3;--line:#2c3947;--accent:#4fc1c6;--accent-ink:#0b1a1c}}
+:root{--bg:#fbf3f3;--card:#fff;--ink:#2b1a1c;--mute:#6e5a5c;--line:#ecd8d9;--accent:#cf1920;--accent-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1112;--card:#251a1b;--ink:#f6eeee;--mute:#c2aaac;--line:#3d2b2d;--accent:#ff6a70;--accent-ink:#2a0709}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Sarabun","Noto Sans Thai","Leelawadee UI","Segoe UI","Tahoma",sans-serif;font-size:18px;line-height:1.6}
 main{max-width:680px;margin:0 auto;padding:18px 18px 60px}
@@ -168,7 +168,7 @@ const Q = [
 ];
 
 const app = document.getElementById("app");
-let L = 1, view = "start", i = 0, ans = [], qs = [], fresh = false, topColor = "#0f6e73";
+let L = 1, view = "start", i = 0, ans = [], qs = [], fresh = false, topColor = "#cf1920";
 const shuf = a => { a = a.slice(); for (let n=a.length-1;n>0;n--){ const m=Math.floor(Math.random()*(n+1)); [a[n],a[m]]=[a[m],a[n]]; } return a; };       // L: 0 = TH, 1 = EN
 const t = x => (typeof x === "function" ? x : x)[L];
 const esc = s => s.replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
@@ -243,7 +243,7 @@ function confetti(){
   cv.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:99";
   document.body.appendChild(cv);
   const d = devicePixelRatio||1, W = cv.width = innerWidth*d, H = cv.height = innerHeight*d, g = cv.getContext("2d");
-  const cols = [topColor,"#f5b700","#e4572e","#17a398","#7b5ea7","#3a86ff"], R = Math.random, ps = [];
+  const cols = [topColor,"#ed1c24","#fcd00b","#808281","#f7a8ab","#fcd00b"], R = Math.random, ps = [];
   const mk = (x,y,vx,vy,gr,dr) => ps.push({x,y,vx,vy,gr,dr,w:(12+R()*10)*d,r:R()*6.3,vr:(R()-.5)*.35,tl:R()*6.3,c:cols[Math.floor(R()*cols.length)]});
   if (!calm) for (let n=0;n<70;n++){ const sd = n%2?-1:1; mk(sd>0?0:W, H*.9, sd*(4+R()*12)*d, -(16+R()*16)*d, .5*d, .985); }   // bursts from the bottom corners
   for (let n=0;n<(calm?60:85);n++) mk(R()*W, -R()*H*.9, (R()-.5)*1.5*d, (1+R())*d, .1*d, .96);   // slow, floaty rain                          // paper rain from the top
